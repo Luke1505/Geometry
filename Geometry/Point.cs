@@ -8,10 +8,10 @@ namespace Geometry
 {
     internal class Point
     {
-        public int X { get; set; }
-        public int Y { get; set; }
+        public long X { get; set; }
+        public long Y { get; set; }
 
-        public Point(int x, int y)
+        public Point(long x, long y)
         {
             X = x;
             Y = y;
@@ -25,24 +25,20 @@ namespace Geometry
 
         public override string ToString()
         {
-            return string.Format("({0}, {1})", X, Y);
+            return $"({X}/{Y})";
         }
-
-        //Distance to another point
         public double Distance(Point other)
         {
-            int xDiff = X - other.X;
-            int yDiff = Y - other.Y;
+            long xDiff = X - other.X;
+            long yDiff = Y - other.Y;
             return Math.Sqrt(xDiff * xDiff + yDiff * yDiff);
         }
 
-        //Mirror on x axis and return new point
         public Point MirrorX()
         {
             return new Point(X, -Y);
         }
 
-        //Mirror on y axis and return new point
         public Point MirrorY()
         {
             return new Point(-X, Y);
