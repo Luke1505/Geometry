@@ -8,24 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\slodr\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\luke.hanssen\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\slodr\\source\\repos\\Geometry\\Geometry\\Geometry.csproj",
+      "projectUniqueName": "S:\\Luke-Hanssen\\C#\\Geometry\\Geometry\\Geometry.csproj",
       "projectName": "Geometry",
-      "projectPath": "C:\\Users\\slodr\\source\\repos\\Geometry\\Geometry\\Geometry.csproj",
-      "packagesPath": "C:\\Users\\slodr\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\slodr\\source\\repos\\Geometry\\Geometry\\obj\\",
+      "projectPath": "S:\\Luke-Hanssen\\C#\\Geometry\\Geometry\\Geometry.csproj",
+      "packagesPath": "C:\\Users\\luke.hanssen\\.nuget\\packages\\",
+      "outputPath": "S:\\Luke-Hanssen\\C#\\Geometry\\Geometry\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\slodr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\luke.hanssen\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -33,7 +28,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "c:\\program files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -57,8 +51,7 @@
           "net47",
           "net471",
           "net472",
-          "net48",
-          "net481"
+          "net48"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -67,7 +60,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
       }
     }
   }
