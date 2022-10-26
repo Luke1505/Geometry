@@ -4,16 +4,16 @@ namespace Geometry
     internal class Polygon
     {
         
-        private int _linestrength;
-        private int _linecolor;
-        private Point[] _punkte;
+        private int Linestrength;
+        private int Linecolor;
+        private Point[] Points;
 
 
-        public Polygon(Point[] punkte, int linestrength, int linecolor)
+        public Polygon(Point[] points, int linestrength, int linecolor)
         {
-            _linecolor = linecolor;
-            _linestrength = linestrength;
-            _punkte = punkte;
+            Linecolor = linecolor;
+            Linestrength = linestrength;
+            points = points;
 
         }
 
@@ -23,30 +23,34 @@ namespace Geometry
 
             string output = "";
 
-            foreach(var p in _punkte)
+            foreach(var p in Points)
                 output += p.ToString() +", ";
 
             return output;
         }
 
 
-        public void AddPoint(Point punkt)
+        public void AddPoint(Point point)
         {
-            _punkte = _punkte.Append(punkt).ToArray();
+            Points = Points.Append(point).ToArray();
         }
 
+        public void RemovePoint(Point point)
+        {
+            Points = Points.Except(new Point[] { point }).ToArray();
+        }
 
         public double Circumference()
         {
 
             double circumference = 0;
 
-            for (int i = 0; i < _punkte.Length -1; i++)
+            for (int i = 0; i < Points.Length -1; i++)
             {
-                circumference += _punkte[i].Distance(_punkte[i + 1]);
+                circumference += Points[i].Distance(Points[i + 1]);
             }
 
-            circumference += _punkte[0].Distance(_punkte[_punkte.Length -1]);
+            circumference += Points[0].Distance(Points[Points.Length -1]);
 
             return circumference;
         }
