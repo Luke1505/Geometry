@@ -43,9 +43,14 @@ namespace Geometry
             return Math.Abs(s - (s1 + s2 + s3)) < 0.0001;
         }
 
-        public double Angle(Point one, Point two)
+        //calculate the angle of the triangle
+        public double Angle()
         {
-            return 1 ;
+            double a = Points[0].Distance(Points[1]);
+            double b = Points[1].Distance(Points[2]);
+            double c = Points[2].Distance(Points[0]);
+            double cos = (a * a + b * b - c * c) / (2 * a * b);
+            return Math.Acos(cos);
         }
     }
 }
