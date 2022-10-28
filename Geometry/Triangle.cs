@@ -47,11 +47,7 @@ namespace Geometry
         /// <returns>Area</returns>
         public double Area()
         {
-            double a = Points[0].Distance(Points[1]);
-            double b = Points[1].Distance(Points[2]);
-            double c = Points[2].Distance(Points[0]);
-            double s = (a + b + c) / 2;
-            return Math.Sqrt(s * (s - a) * (s - b) * (s - c));
+            return 0.5 * Math.Abs(Points[0].X * (Points[1].Y - Points[2].Y) + Points[1].X * (Points[2].Y - Points[0].Y) + Points[2].X * (Points[0].Y - Points[1].Y));
         }
 
         /// <summary>
@@ -72,19 +68,6 @@ namespace Geometry
             double s2 = new Triangle(points2, Linestrength, Linecolor).Area();
             double s3 = new Triangle(points3, Linestrength, Linecolor).Area();
             return Math.Abs(s - (s1 + s2 + s3)) < 0.0001;
-        }
-        
-        /// <summary>
-        /// Calculates the Angle of the Triangle
-        /// </summary>
-        /// <returns>Angle</returns>
-        public double Angle()
-        {
-            double a = Points[0].Distance(Points[1]);
-            double b = Points[1].Distance(Points[2]);
-            double c = Points[2].Distance(Points[0]);
-            double cos = (a * a + b * b - c * c) / (2 * a * b);
-            return Math.Acos(cos);
         }
     }
 }

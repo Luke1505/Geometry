@@ -41,7 +41,7 @@ namespace Geometry
         public double Area()
         {
             double radius = Center.Distance(OuterPoint);
-            return Math.PI * radius * radius;
+            return Math.PI * Math.Pow(radius,2);
         }
 
         /// <summary>
