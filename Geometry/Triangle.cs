@@ -8,8 +8,15 @@ namespace Geometry
 {
     internal class Triangle : Polygon
     {
-        public Triangle(Point[] points, int linestrength, ConsoleColor linecolor) : base(points, linestrength,linecolor)
+        public Triangle(Point[] points, int linestrength, ConsoleColor linecolor)
+            : base(points, linestrength, linecolor)
         {
+            if (points.Length != 3)
+            {
+                throw new InvalidOperationException(
+                    "Triangle needs 3 Points/is only capable of having 3 Points"
+                );
+            }
         }
 
         public Triangle()
@@ -17,6 +24,9 @@ namespace Geometry
             Points[0] = new Point();
             Points[1] = new Point();
             Points[2] = new Point();
+
+            Linestrength = 1;
+            Linecolor = ConsoleColor.White;
         }
 
         public double Area()

@@ -1,14 +1,14 @@
-﻿namespace Geometry
+namespace Geometry
 {
-    internal class Hexagon : Polygon
+    internal class Square : Polygon
     {
-        public Hexagon(Point[] points, int linestrength, ConsoleColor linecolor)
+        public Square(Point[] points, int linestrength, ConsoleColor linecolor)
             : base(points, linestrength, linecolor)
         {
-            if (points.Length != 6)
+            if (points.Length != 4)
             {
                 throw new InvalidOperationException(
-                    "Hexagon needs 6 Points/is only capable of having 6 Points"
+                    "Square needs 4 Points/is only capable of having 4 Points"
                 );
             }
         }

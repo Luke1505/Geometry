@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace Geometry
 {
     internal class Point
@@ -29,6 +28,7 @@ namespace Geometry
         {
             return $"({X}/{Y})";
         }
+
         public double Distance(Point other)
         {
             long xDiff = X - other.X;
