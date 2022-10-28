@@ -2,18 +2,27 @@
 
 Point p1 = new Point(1, 2);
 Point p2 = new Point(3, 4);
-
-//Circle c1 = new(p1, p2);
-//Console.WriteLine(c1.Area());
-//Console.WriteLine(c1.Circumference());
-//Console.WriteLine(c1.Diameter());
-//Console.WriteLine(c1.Radius());
-//Console.WriteLine(c1.IsInside(new(2, 3)));
-//Console.WriteLine(c1.IsInside(new(4, 5)));
-Point[] points = { p1, p2 };
+Point p3 = new Point(5, 6);
+Point p4 = new Point(7, 8);
+Point p5 = new Point(9, 10);
+Point p6 = new Point(11, 12);
+Circle c1 = new(p1, p2);
+Console.WriteLine(c1.Area());
+Console.WriteLine(c1.Circumference());
+Console.WriteLine(c1.Diameter());
+Console.WriteLine(c1.Radius());
+//Console.WriteLine(c1.IsInside(new Point(2, 3)));
+//Console.WriteLine(c1.IsInside(new Point(4, 5)));
+Point[] points = { p1, p2, p3 };
 Console.WriteLine(points.Length);
 ConsoleColor color = ConsoleColor.Black;
 Polygon poly = new(points, 12, color);
 Console.WriteLine(poly);
-Hexagon hex = new(points, 12, color);
+Point[] points2 = { p1, p2, p3, p4 , p5, p6};
+Hexagon hex = new(points2, 12, color);
 Console.WriteLine(hex);
+Triangle tri = new(points, 12, color);
+Console.WriteLine(tri);
+Point[] points3 = { p1, p2, p3, p4 };
+Square sq = new(points3, 12, color);
+Console.WriteLine(sq);

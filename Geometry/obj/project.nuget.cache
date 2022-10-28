@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9IfAOFnBVL0C7ghJDlYaNv5LLG5HQUNpi7et0Fg45cJLDX5VGyYuLMYR2FYR1sbSUoArtUNIhDuxU6kLaGDzeQ==",
+  "dgSpecHash": "/mXAJ13L70WvFyZ8pbfrqgwLVWPJE3RxXRc41ATloQrFqT9e4WrIkVWQvElFtuCCT5pH67wCs/9zPBZgibSLgg==",
   "success": true,
-  "projectFilePath": "S:\\Luke-Hanssen\\C#\\Geometry\\Geometry\\Geometry.csproj",
+  "projectFilePath": "/workspaces/Geometry/Geometry/Geometry.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
