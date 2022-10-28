@@ -9,12 +9,19 @@ namespace Geometry
         public Point[] Points { get; private set; }
 
 
-        public Polygon(Point[] points, int linestrength, ConsoleColor linecolor)
+        public Polygon(Point[] points, int linestrength, ConsoleColor linecolor) 
         {
             Linecolor = linecolor;
             Linestrength = linestrength;
             Points = points;
 
+        }
+
+        public Polygon()
+        {
+            this.Points[0] = new Point();
+            this.Points[1] = new Point();
+            this.Points[2] = new Point();
         }
         private string Stringbuilder()
         {

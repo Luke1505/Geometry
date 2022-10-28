@@ -6,49 +6,46 @@ using System.Threading.Tasks;
 
 namespace Geometry
 {
-    internal class Triangle
+    internal class Triangle : Polygon
     {
-        private Point One { get; set; }
-        private Point Two { get; set; }
-        private Point Three { get; set; }
-
-        public Triangle(Point one, Point two, Point three)
+        public Triangle(Point[] points, int linestrength, ConsoleColor linecolor) : base(points, linestrength,linecolor)
         {
-            One = one;
-            Two = two;
-            Three = three;
         }
 
         public Triangle()
         {
-            One = new Point();
-            Two = new Point();
-            Three = new Point();
+            Points[0] = new Point();
+            Points[1] = new Point();
+            Points[2] = new Point();
         }
 
         public double Area()
         {
-            double a = One.Distance(Two);
-            double b = Two.Distance(Three);
-            double c = Three.Distance(One);
+            double a = Points[0].Distance(Points[1]);
+            double b = Points[1].Distance(Points[2]);
+            double c = Points[2].Distance(Points[0]);
             double s = (a + b + c) / 2;
             return Math.Sqrt(s * (s - a) * (s - b) * (s - c));
         }
 
-        public double Perimeter()
+        public bool IsInside(Point p)
         {
-            double a = One.Distance(Two);
-            double b = Two.Distance(Three);
-            double c = Three.Distance(One);
-            return a + b + c;
+            double a = Points[0].Distance(Points[1]);
+            double b = Points[1].Distance(Points[2]);
+            double c = Points[2].Distance(Points[0]);
+            double s = (a + b + c) / 2;
+            Point[] points1 = { Points[0], Points[1], p };
+            Point[] points2 = { Points[1], Points[2], p };
+            Point[] points3 = { Points[2], Points[0], p };
+            double s1 = new Triangle(points1, Linestrength, Linecolor).Area();
+            double s2 = new Triangle(points2, Linestrength, Linecolor).Area();
+            double s3 = new Triangle(points3, Linestrength, Linecolor).Area();
+            return Math.Abs(s - (s1 + s2 + s3)) < 0.0001;
         }
 
         public double Angle(Point one, Point two)
         {
-            double a = one.Distance(two);
-            double b = two.Distance(Three);
-            double c = Three.Distance(one);
-            return Math.Acos((a * a + b * b - c * c) / (2 * a * b));
+            return 1 ;
         }
     }
 }

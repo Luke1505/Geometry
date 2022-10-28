@@ -6,7 +6,7 @@
         {
             if (points.Length != 6)
             {
-                throw new InvalidOperationException("Hexagon needs 6 Points/is only capable of having 6");
+                throw new InvalidOperationException("Hexagon needs 6 Points/is only capable of having 6 Points");
             }
         }
 
