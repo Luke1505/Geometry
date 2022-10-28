@@ -4,29 +4,40 @@ namespace Geometry
     internal class Polygon
     {
         
-        private int Linestrength;
-        private int Linecolor;
-        private Point[] Points;
+        public int Linestrength { get; set; }
+        public ConsoleColor Linecolor { get; set; }
+        public Point[] Points { get; private set; }
 
 
-        public Polygon(Point[] points, int linestrength, int linecolor)
+        public Polygon(Point[] points, int linestrength, ConsoleColor linecolor)
         {
             Linecolor = linecolor;
             Linestrength = linestrength;
-            points = points;
+            Points = points;
 
         }
+        private string Stringbuilder()
+        {
+            string output = "";
 
+            for (int i = 0; i < Points.Length; i++)
+            {
+                Point p = Points[i];
+                if (i == Points.Length - 1)
+                {
+                    output += p.ToString();
+                }
+                else
+                {
+                    output += p.ToString() + ", ";
+                }
+            }
+            return output;
+        }
 
         public override string ToString()
         {
-
-            string output = "";
-
-            foreach(var p in Points)
-                output += p.ToString() +", ";
-
-            return output;
+            return Stringbuilder();
         }
 
 

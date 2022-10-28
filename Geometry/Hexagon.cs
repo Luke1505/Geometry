@@ -1,14 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Geometry
+﻿namespace Geometry
 {
-    internal class Hexagon
+    internal class Hexagon : Polygon
     {
-        //Hexagon Class based on Points
-        private Point one { get; set; }
+        public Hexagon(Point[] points, int linestrength, ConsoleColor linecolor) : base(points, linestrength, linecolor)
+        {
+            if (points.Length != 6)
+            {
+                throw new InvalidOperationException("Hexagon needs 6 Points/is only capable of having 6");
+            }
+        }
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
     }
 }
