@@ -43,7 +43,6 @@
         {
             return Stringbuilder();
         }
-
         public void AddPoint(Point point)
         {
             Points = Points.Append(point).ToArray();

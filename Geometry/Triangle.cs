@@ -21,9 +21,9 @@ namespace Geometry
 
         public Triangle()
         {
-            Points[0] = new Point();
-            Points[1] = new Point();
-            Points[2] = new Point();
+            Points[0] = new Point(0,1);
+            Points[1] = new Point(1,2);
+            Points[2] = new Point(0,3);
 
             Linestrength = 1;
             Linecolor = ConsoleColor.White;
