@@ -1,7 +1,18 @@
 namespace Geometry
 {
+    /// <summary>
+    /// Square
+    /// 
+    /// </summary>
     internal class Square : Polygon
     {
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="points"> List of points that form a Square</param>
+        /// <param name="linestrength">The strength of the drawline</param>
+        /// <param name="linecolor">The Color of the drawline</param>
+        /// <exception cref="InvalidOperationException">Exception if there are more or less points than 4</exception>
         public Square(Point[] points, int linestrength, ConsoleColor linecolor)
             : base(points, linestrength, linecolor)
         {
@@ -13,6 +24,9 @@ namespace Geometry
             }
         }
 
+        /// <summary>
+        /// Standard Constructor
+        /// </summary>
         public Square()
         {
             Points[0] = new Point(0, 1);
@@ -23,7 +37,10 @@ namespace Geometry
             Linecolor = ConsoleColor.White;
         }
 
-        //calculate the area of the square
+        /// <summary>
+        /// Calculates the Area of the Square
+        /// </summary>
+        /// <returns>Area</returns>
         public double Area()
         {
             double a = Points[0].Distance(Points[1]);
@@ -31,7 +48,11 @@ namespace Geometry
             return a * b;
         }
 
-        //calculate if a point is inside the square
+        /// <summary>
+        /// Calculates if the point is inside the Square
+        /// </summary>
+        /// <param name="p">the point that needs to be checked</param>
+        /// <returns>True or False</returns>
         public bool IsInside(Point p)
         {
             double a = Points[0].Distance(Points[1]);
@@ -50,6 +71,12 @@ namespace Geometry
             return Math.Abs(s - (s1 + s2 + s3 + s4)) < 0.0001;
         }
 
+        /// <summary>
+        /// Adds a point to the Square
+        /// </summary>
+        /// <param name="p">Point</param>
+        /// <param name="index">index which point needs to be replaced</param>
+        /// <exception cref="InvalidOperationException">Exception if try to add a point below 1 and above </exception>
         public void AddPoint(Point p, int index)
         {
             index = index - 1;
@@ -60,7 +87,10 @@ namespace Geometry
 
             Points[index] = p;
         }
-        
+        /// <summary>
+        /// To String
+        /// </summary>
+        /// <returns>String</returns>
         public override string ToString()
         {
             return base.ToString();

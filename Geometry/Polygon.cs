@@ -1,11 +1,20 @@
 ﻿namespace Geometry
 {
+    /// <summary>
+    /// Polygon
+    /// </summary>
     internal class Polygon
     {
         public int Linestrength { get; set; }
         public ConsoleColor Linecolor { get; set; }
         public Point[] Points { get; private set; }
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="points"></param>
+        /// <param name="linestrength"></param>
+        /// <param name="linecolor"></param>
         public Polygon(Point[] points, int linestrength, ConsoleColor linecolor)
         {
             Linecolor = linecolor;
@@ -13,6 +22,9 @@
             Points = points;
         }
 
+        /// <summary>
+        /// Standard Constructor
+        /// </summary>
         public Polygon()
         {
             this.Points[0] = new Point();
@@ -20,7 +32,11 @@
             this.Points[2] = new Point();
         }
 
-        private string Stringbuilder()
+        /// <summary>
+        /// To String
+        /// </summary>
+        /// <returns>List of Points in the form</returns>
+        public override string ToString()
         {
             string output = "";
 
@@ -39,20 +55,28 @@
             return output;
         }
 
-        public override string ToString()
-        {
-            return Stringbuilder();
-        }
+        /// <summary>
+        /// Adds a Point to the Polygon
+        /// </summary>
+        /// <param name="point">The point you want to add</param>
         public void AddPoint(Point point)
         {
             Points = Points.Append(point).ToArray();
         }
 
+        /// <summary>
+        /// Removes a Point from the Polygon
+        /// </summary>
+        /// <param name="point">The point you want to remove</param>
         public void RemovePoint(Point point)
         {
             Points = Points.Except(new Point[] { point }).ToArray();
         }
 
+        /// <summary>
+        /// Calculates the Circumference of the Polygon
+        /// </summary>
+        /// <returns>Circumference</returns>
         public double Circumference()
         {
             double circumference = 0;

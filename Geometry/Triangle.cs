@@ -5,9 +5,19 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Geometry
-{
+{   
+    /// <summary>
+    /// Triangle
+    /// </summary>
     internal class Triangle : Polygon
     {
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="points">List of points that form a Triangle</param>
+        /// <param name="linestrength">The strength of the drawline</param>
+        /// <param name="linecolor">The Color of the drawline</param>
+        /// <exception cref="InvalidOperationException">Exception if there are more or less points than 3</exception>
         public Triangle(Point[] points, int linestrength, ConsoleColor linecolor)
             : base(points, linestrength, linecolor)
         {
@@ -18,7 +28,9 @@ namespace Geometry
                 );
             }
         }
-
+        /// <summary>
+        /// Standard Constructor
+        /// </summary>        
         public Triangle()
         {
             Points[0] = new Point(0,1);
@@ -29,6 +41,10 @@ namespace Geometry
             Linecolor = ConsoleColor.White;
         }
 
+        /// <summary>
+        /// Calculates the Area of the Triangle
+        /// </summary>
+        /// <returns>Area</returns>
         public double Area()
         {
             double a = Points[0].Distance(Points[1]);
@@ -38,6 +54,11 @@ namespace Geometry
             return Math.Sqrt(s * (s - a) * (s - b) * (s - c));
         }
 
+        /// <summary>
+        /// Calculates if the point is inside the Triangle
+        /// </summary>
+        /// <param name="p">Point</param>
+        /// <returns>True or False</returns>
         public bool IsInside(Point p)
         {
             double a = Points[0].Distance(Points[1]);
@@ -52,8 +73,11 @@ namespace Geometry
             double s3 = new Triangle(points3, Linestrength, Linecolor).Area();
             return Math.Abs(s - (s1 + s2 + s3)) < 0.0001;
         }
-
-        //calculate the angle of the triangle
+        
+        /// <summary>
+        /// Calculates the Angle of the Triangle
+        /// </summary>
+        /// <returns>Angle</returns>
         public double Angle()
         {
             double a = Points[0].Distance(Points[1]);
